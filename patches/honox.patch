@@ -1,0 +1,44 @@
+diff --git a/dist/server/components/link.js b/dist/server/components/link.js
+index 733d90d06d8c6ff9b04f0bb93b3af4266c487165..a0d3296dd2dca55e98ed2dab18f4915a8b619958 100644
+--- a/dist/server/components/link.js
++++ b/dist/server/components/link.js
+@@ -18,7 +18,7 @@ const Link = (options) => {
+         const assetInManifest = manifest[href.replace(/^\//, "")];
+         if (assetInManifest) {
+           if (href.startsWith("/")) {
+-            return /* @__PURE__ */ jsx("link", { href: `/${assetInManifest.file}`, ...rest });
++            return /* @__PURE__ */ jsx("link", { href: `${import.meta.env.BASE_URL}${assetInManifest.file}`, ...rest });
+           }
+           return /* @__PURE__ */ jsx("link", { href: assetInManifest.file, ...rest });
+         }
+diff --git a/dist/server/components/script.js b/dist/server/components/script.js
+index 02c475fae3c9ab22855a9413cecfe8bc7c02b276..dbed340c7ee5f11c15eb06d0cece1c081cd40d5f 100644
+--- a/dist/server/components/script.js
++++ b/dist/server/components/script.js
+@@ -18,15 +18,17 @@ const Script = (options) => {
+     if (manifest) {
+       const scriptInManifest = manifest[src.replace(/^\//, "")];
+       if (scriptInManifest) {
+-        return /* @__PURE__ */ jsx(HasIslands, { children: /* @__PURE__ */ jsx(
+-          "script",
+-          {
+-            type: "module",
+-            async: !!options.async,
+-            src: `/${scriptInManifest.file}`,
+-            nonce: options.nonce
+-          }
+-        ) });
++        return /* @__PURE__ */ jsx(HasIslands, {
++          children: /* @__PURE__ */ jsx(
++            "script",
++            {
++              type: "module",
++              async: !!options.async,
++              src: import.meta.env.BASE_URL + scriptInManifest.file,
++              nonce: options.nonce
++            }
++          )
++        });
+       }
+     }
+     return /* @__PURE__ */ jsx(Fragment, {});
