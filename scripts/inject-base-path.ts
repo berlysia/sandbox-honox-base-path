@@ -7,10 +7,13 @@ const config: UserConfigExport = viteConfig;
 const calcuratedConfig = typeof config === "function" ? config({mode: "", command: "build"}) : config;
 const resolvedConfig = calcuratedConfig instanceof Promise ? await calcuratedConfig : calcuratedConfig;
 
-const basePath = resolvedConfig.base ?? '/'
+const givenBasePath = resolvedConfig.base ?? '/'
 
 const manifestPath = path.resolve(import.meta.dirname, '../dist/.vite/manifest.json')
 const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8')) as Manifest
+
+// preserve given style
+const basePath = givenBasePath.startsWith('/') ? givenBasePath.slice(1, givenBasePath.length) : givenBasePath
 
 Object.keys(manifest).forEach((assetName) => {
   const file = manifest[assetName].file
