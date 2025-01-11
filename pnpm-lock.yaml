@@ -24,6 +24,9 @@ importers:
       '@hono/vite-dev-server':
         specifier: ^0.18.0
         version: 0.18.0(hono@4.6.16)(miniflare@3.20241230.1)(wrangler@3.101.0(@cloudflare/workers-types@4.20250109.0))
+      '@hono/vite-ssg':
+        specifier: ^0.1.1
+        version: 0.1.1(hono@4.6.16)
       vite:
         specifier: ^5.2.12
         version: 5.4.11(@types/node@22.10.5)
@@ -591,6 +594,12 @@ packages:
         optional: true
       wrangler:
         optional: true
+
+  '@hono/vite-ssg@0.1.1':
+    resolution: {integrity: sha512-9n+qrLCyb2/SniAiA0RfaW3+8RmKN4DONYheFkVV0uIQE6NTN1tAVAsX6st1iAVe3hkb0rzVf14iIopt/9LqFw==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: '>=4.0.0'
 
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
@@ -2291,6 +2300,10 @@ snapshots:
     optionalDependencies:
       miniflare: 3.20241230.1
       wrangler: 3.101.0(@cloudflare/workers-types@4.20250109.0)
+
+  '@hono/vite-ssg@0.1.1(hono@4.6.16)':
+    dependencies:
+      hono: 4.6.16
 
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
