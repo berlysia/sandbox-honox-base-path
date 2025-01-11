@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && vite build --mode client && node scripts/inject-base-path.ts && vite build",
+    "build": "rm -rf dist && vite build --mode client && vite build",
     "preview": "wrangler pages dev",
     "serve": "node scripts/serve.ts",
     "deploy": "pnpm run build && wrangler pages deploy"
