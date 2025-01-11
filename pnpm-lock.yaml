@@ -27,6 +27,9 @@ importers:
       '@hono/vite-ssg':
         specifier: ^0.1.1
         version: 0.1.1(hono@4.6.16)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
       vite:
         specifier: ^5.2.12
         version: 5.4.11(@types/node@22.10.5)
