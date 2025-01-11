@@ -1,6 +1,6 @@
 import { Style } from 'hono/css'
 import { jsxRenderer } from 'hono/jsx-renderer'
-import { Script } from 'honox/server'
+import { Script } from '../Script'
 
 export default jsxRenderer(({ children, title }) => {
   return (
