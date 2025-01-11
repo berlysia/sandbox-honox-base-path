@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "composite": true,
+    "target": "ESNext",
+    "module": "nodenext",
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": [
+      "ESNext",
+    ],
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+  },
+  "include": [
+    "scripts/**/*.ts",
+    "vite.config.ts",
+  ]
+}
