@@ -1,0 +1,1 @@
+import{u as o,j as n}from"./client-D49UhYMH.js";new TextEncoder;function c(){const[t,e]=o(0);return n("div",{children:[n("p",{children:t}),n("button",{onClick:()=>e(t+1),children:"Increment"})]})}export{c as default};
