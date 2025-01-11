@@ -5,5 +5,8 @@ import ssg from '@hono/vite-ssg'
 
 export default defineConfig({
   base: "/sandbox-honox-base-path/",
+  build: {
+    emptyOutDir: false,
+  },
   plugins: [honox({ devServer: { adapter } }), ssg({entry: "./app/server.ts"})]
 })
