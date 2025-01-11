@@ -11,7 +11,8 @@
     ],
     "allowImportingTsExtensions": true,
     "emitDeclarationOnly": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
   },
   "include": [
     "scripts/**/*.ts",

@@ -1,10 +1,11 @@
 {
-  "name": "basic",
+  "name": "sandbox-honox-base-path",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && vite build --mode client && node scripts/inject-base-path.ts && vite build",
     "preview": "wrangler pages dev",
+    "serve": "node scripts/serve.ts",
     "deploy": "pnpm run build && wrangler pages deploy"
   },
   "private": true,
@@ -17,6 +18,9 @@
     "@hono/vite-build": "^1.2.0",
     "@hono/vite-dev-server": "^0.18.0",
     "@hono/vite-ssg": "^0.1.1",
+    "@types/serve-handler": "^6.1.4",
+    "get-port": "^7.1.0",
+    "serve-handler": "^6.1.6",
     "typescript": "^5.7.3",
     "vite": "^5.2.12",
     "wrangler": "^3.96.0"
