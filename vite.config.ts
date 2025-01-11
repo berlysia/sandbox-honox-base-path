@@ -20,7 +20,9 @@ export default defineConfig(({mode}) => {
       build: {
         ssrManifest: true,
       },
-      plugins: [client()]
+      plugins: [client({
+        input: ["./app/style.css"],
+      })]
     }
   }
 
